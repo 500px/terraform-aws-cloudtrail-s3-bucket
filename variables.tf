@@ -47,3 +47,8 @@ variable "force_destroy" {
   description = "A boolean that indicates the bucket can be destroyed even if it contains objects. These objects are not recoverable"
   default     = "false"
 }
+
+variable "create_s3_bucket" {
+  description = "A boolean that allows us to create the s3 bucket conditionally. Useful as modules cannot use count parameter"
+  default     = "true"
+}
