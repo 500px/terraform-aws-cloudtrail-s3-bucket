@@ -54,6 +54,8 @@ data "aws_iam_policy_document" "default" {
 }
 
 module "s3_bucket" {
+  count = "${var.create_s3_bucket ? 1 : 0}"
+
   source                 = "git::https://github.com/cloudposse/terraform-aws-s3-log-storage.git?ref=tags/0.2.0"
   namespace              = "${var.namespace}"
   stage                  = "${var.stage}"
